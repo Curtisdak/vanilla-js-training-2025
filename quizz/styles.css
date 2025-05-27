@@ -1,0 +1,204 @@
+    body {
+        background-color: black;
+        color: white;
+        padding: 5px;
+    }
+    
+    h1 {
+        margin: 0
+    }
+    
+    #container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+    }
+    
+    button {
+        background-color: #7d4caf;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    button:hover {
+        background-color: #5e2a7f;
+        /* Darker green */
+    }
+    
+    .menuContainerr {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menuBtn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    #next-btn {
+        animation: bounce 1s 0s ease-in-out infinite;
+        display: none
+    }
+    
+    #next-btn:hover {
+        animation: alternate;
+    }
+    
+    @keyframes bounce {
+        0% {
+            transform: translateX(0%);
+        }
+        50% {
+            transform: translateX(40%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+    
+    .btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .answerBtn {
+        background-color: grey;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        padding: 15px;
+        margin: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .answerBtn:hover {
+        /* background-color: #5e2a7f; */
+    }
+    
+    .answerRadio {
+        display: hidden;
+    }
+    
+    #question {
+        font-size: 22px;
+        /* background: #5e2a7f; */
+        padding: 10px;
+        text-align: left;
+        border-radius: 10px;
+    }
+    
+    #options {
+        /* background-color: red; */
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 2fr 2fr;
+        padding: 20px;
+        width: 80vw;
+    }
+    
+    .points {
+        font-size: 35px;
+        text-align: center;
+        border: 3px dashed #5e2a7f;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .correct-answer {
+        display: none;
+        font-size: 20px;
+        background-color: red;
+        padding: 20px;
+        width: 60vw;
+        text-align: center;
+        border-radius: 10px;
+        height: 30vh;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .bolder {
+        font-weight: 700;
+        font-size: 30px;
+    }
+    
+    #timer {
+        font-weight: 600;
+        font-size: 40px;
+        border: 5px dashed purple;
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        text-transform: unset;
+        animation: rotate 1s ease-in-out 0s infinite;
+        border-radius: 100%;
+        display: none;
+    }
+    
+    @keyframes rotate {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.2);
+        }
+    }
+    
+    .closeBtn {
+        font-weight: 600;
+        font-size: 30px;
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 100%;
+        margin: 10px auto;
+        /* transform: translateY(50%); */
+    }
+    
+    #Finale {
+        background: purple;
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #finaleScoreShow {
+        font-size: 30px;
+        margin: auto;
+    }
+    
+    .finalPoints {
+        font-weight: 700;
+        font-size: 40px;
+    }
