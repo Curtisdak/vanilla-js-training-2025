@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>my playground</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <h1>let try to vibrate an app</h1>
+
+        <button id="vibrateBtn">Click </button>
+    </div>
+    <script>
+        const colors = ["red", "blue", "yellow", "orange", "purple"]
+        const vibrateEl = document.getElementById("vibrateBtn");
+        vibrateEl.addEventListener("click", () => {
+            console.log("is clicked")
+            console.log(window.innerWidth);
+            console.log(window.innerHeight);
+            console.log(window.location.href)
+
+            let index = 0
+
+            setInterval(() => {
+                const bodyEl = document.querySelector("body")
+                const currentColor = colors[(index++)];
+
+                bodyEl.style.background = `${currentColor}`
+                console.log(currentColor)
+            }, 2000)
+
+        })
+    </script>
+</body>
+
+</html>
+
+</html>
