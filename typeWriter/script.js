@@ -6,19 +6,26 @@ const title = document.querySelector(".titleEl");
 const showParaBtn = document.querySelector("#showParaBtn")
 
 let charIndex = 0;
-let contentIndex = 0
+let contentIndex = 0;
+let ispaused = false;
 
 
 const simpleTypeFunc = (text) => {
 
-    if (index < text.length) {
-        paraEL.textContent += text.charAt(index)
-        index++
+    if (charIndex < text.length) {
+        paraEL.textContent += text.charAt(charIndex)
+        charIndex++
         setTimeout(() => simpleTypeFunc(text), 20);
     }
 }
 
 const typewriterLoop = () => {
+
+    if (ispaused) {
+        setTimeout(typewriterLoop, 100);
+        return;
+    }
+
     let currentText = contents[contentIndex]
 
     if (charIndex < currentText.length) {
@@ -48,4 +55,11 @@ showParaBtn.addEventListener("click", () => {
     index = 0;
     typewriterLoop()
     console.log(contents)
+})
+paraEL.addEventListener("mouseenter", () => {
+    ispaused = true
+})
+
+paraEL.addEventListener("mouseleave", () => {
+    ispaused = false
 })
